@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Guru</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+      
+        .bg-holder {
+            background-image: url('/images/gurubg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; 
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 60px;
+            border-radius: 10px; 
+        }
+
+
+        .button:active {
+            background-color: #6f0000;
+            transform: translateY(0);
+        }
+        .button:hover {
+            background-color: red !important;
+            transform: translateY(-5px);
+        }
+
+        input[type="text"], input[type="password"] {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="bg-holder"></div>
+
+    <div class="container">
+        <div class="menu">
+            <h1 style="font-size: 35px; margin-bottom: 5px;">Anda login sebagai Guru</h1>
+            <h2 style="font-size: 25px; margin-top: 0px;">Welcome, <span th:text="${username}">Guru</span></h1>
+            <p style="margin-bottom: 10px;">Pilih opsi untuk melanjutkan!
+            </p>
+
+            <form action="#" method="post">
+                <a href="menuguru2" class="button" style="margin: 20px 10px; padding: 15px 40px; color: white; text-decoration: none; 
+                transition: background-color 0.5s; border-radius: 10px; background-color: maroon; display: inline-block;">Input Nilai</a>
+                <a href="RapotGuru" class="button" style="margin: 20px 10px; padding: 15px 40px; color: white; text-decoration: none; 
+                transition: background-color 0.5s; border-radius: 10px; background-color: maroon; display: inline-block;">Rapot Siswa</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

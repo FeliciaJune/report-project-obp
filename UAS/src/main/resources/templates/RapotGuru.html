@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Siswa</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: maroon;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: whitesmoke; 
+            padding: 20px 60px; 
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .button {
+            margin: 20px 10px;
+            padding: 15px 40px;
+            color: white;
+            text-decoration: none;
+            background-color: maroon;
+            border-radius: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background -->
+    <div class="bg-holder" style="background-image:url(background2.jpeg); background-size: cover; background-position: center; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+    <!-- Container -->
+    <div class="container">
+        <div class="menu">
+            <h1 style="font-size: 35px; margin-bottom: 10px;">Rapot Siswa</h1>
+            
+            <!-- Tabel Menampilkan Data Nilai dari Database -->
+            <center>
+                <table border="1" cellspacing="5" bgcolor="whitesmoke" id="nilaiTable">
+                    <tr>
+                        <th style="padding: 10px; padding-left: 5px; padding-right: 5px;">Nama</th>
+                        <th>Pelajaran</th>
+                        <th style="padding-left: 15px; padding-right: 15px;">Nilai</th>
+                        <th style="padding-left: 15px; padding-right: 15px;">Semester</th>  
+                    </tr>
+                    
+                    <!-- Display Data from Database using Thymeleaf -->
+                    <tr th:each="nilai : ${nilaiList}">
+                        <td th:text="${nilai.nama}">Nama</td>
+                        <td th:text="${nilai.pelajaran}">Pelajaran</td>
+                        <td th:text="${nilai.nilai}">Nilai</td>
+                        <td th:text="${nilai.semester}">Semester</td>
+                    </tr>
+                    <tr>
+                        <th colspan="6" height="25">
+                        <input type="submit" value="Perhitungan Nilai" onclick="calculateAverage()"></th>
+                    </tr>
+                </table>
+            </center>
+            
+            <br><br>
+
+            <!-- Tabel Perhitungan Nilai -->
+            <center>
+                <table border="1" cellspacing="5" bgcolor="white" height="60px" width="600px" cellpadding="5px" id="TabelPerhitungan">
+                    <caption><b>Perhitungan Nilai</b></caption>
+                    <tr>
+                        <th width="150px">Nama</th>
+                        <th>Rata-Rata</th>
+                        <th>Lulus atau Gagal</th>
+                    </tr>
+                </table>
+            </center>
+                
+            <!-- Button for logout and other options -->
+          
+            <a href="LogoutGuru" class="button">Logout</a>
+        </div>
+    </div>
+
+   <!-- Script -->
+   <script type="text/javascript">
+    function calculateAverage() {
+        let table = document.getElementById("nilaiTable"); // Get the student data table
+        let rows = table.rows; // Get all rows of the table
+        let studentData = {}; // Object to store students' data
+        
+        // Loop through each row (skip the header row, which is index 0)
+        for (let i = 1; i < rows.length - 1; i++) { // Exclude last row (button)
+            let namaCell = rows[i].cells[0]; // Nama is in the 1st column (index 0)
+            let nilaiCell = rows[i].cells[2]; // Nilai is in the 3rd column (index 2)
+            let nilai = parseFloat(nilaiCell.innerText); // Get nilai value and convert to float
+            let nama = namaCell.innerText; // Get the student's name
+            
+            // If the student already exists in the object, push the new nilai to the list
+            if (studentData[nama]) {
+                studentData[nama].nilai.push(nilai);
+            } else {
+                studentData[nama] = { nilai: [nilai] };
+            }
+        }
+        
+        // Now calculate the average for each student
+        let newTable = document.getElementById('TabelPerhitungan');
+        
+        // Loop through each student and calculate the average
+        for (let studentName in studentData) {
+            let student = studentData[studentName];
+            let sum = student.nilai.reduce((a, b) => a + b, 0); // Calculate sum of nilai
+            let avg = sum / student.nilai.length; // Calculate average
+
+            // Create a new row in the perhitungan table
+            let row = newTable.insertRow(-1);
+            let cell1 = row.insertCell(0); // Nama column
+            let cell2 = row.insertCell(1); // Rata-rata column
+            let cell3 = row.insertCell(2); // Lulus/Gagal column
+
+            // Fill the cells
+            cell1.innerHTML = studentName; // Display student name
+            cell2.innerHTML = avg.toFixed(2); // Display average with 2 decimal places
+
+            // Determine Lulus or Gagal
+            if (avg >= 70) {
+                cell3.innerHTML = "<span style='color: green;'>Lulus</span>";
+            } else {
+                cell3.innerHTML = "<span style='color: red;'>Gagal</span>";
+            }
+        }
+    }
+</script>
+</body>
+</html>

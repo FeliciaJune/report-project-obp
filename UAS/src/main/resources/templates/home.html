@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient( #4b0412 0%, #a30303 100%);
+        }
+
+    
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 40px 60px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-size: 30px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 18px;
+            color: #777;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            margin: 10px 0;
+            padding: 15px 35px;
+            color: white;
+            border-radius: 25px;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #800000;
+            transition: background-color 0.4s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+    
+        .button:hover {
+            background-color: #50b8e1;
+            transform: translateY(-5px);
+            color:#4b0412;
+        }
+
+        .button:active {
+            background-color: #6f0000;
+            transform: translateY(0);
+        }
+
+    
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Selamat Datang di Sistem Rapot Sekolah Tadika Mesra!</h1>
+    <p>Pilih untuk login sebagai:</p>
+    <a href="LoginGuru" class="button">Login Guru</a>
+    <a href="LoginSiswa" class="button">Login Siswa</a>
+</div>
+
+</body>
+</html>
