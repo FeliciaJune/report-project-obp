@@ -9,9 +9,15 @@ This project runs locally. Please start it on **localhost** using the Spring Boo
 This website layout is optimized for **desktop view**. Some elements may not be fully responsive on mobile devices.
 
 ## Project Structure
+The repository contains the following main files and folders:
+- **.vscode/** VS Code workspace settings and launch configurations  
+- **UAS/** → Spring Boot project
+- **README.md** → Project documentation  
+- **obp.sql** → Database structure  
+ 
 ### UAS Folder (Spring Boot Project)
 - **.mvn/** → Maven wrapper files  
-- **.vscode/** → VS Code settings and launch configurations  
+- **.vscode/** → VS Code launch configurations  
 - **src/** → Source code for Spring Boot  
 - **target/** → Compiled project output  
 - **pom.xml** → Maven project configuration  
