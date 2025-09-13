@@ -11,7 +11,7 @@ This website layout is optimized for **desktop view**. Some elements may not be 
 
 ## Project Structure
 The repository contains the following main files and folders:
-- **.vscode/** VS Code workspace settings and launch configurations  
+- **.vscode/** VS Code launch configurations  
 - **UAS/** → Spring Boot project
 - **README.md** → Project documentation  
 - **obp.sql** → Database structure  
