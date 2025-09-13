@@ -40,5 +40,4 @@ The repository contains the following main files and folders:
 - **Frameworks & Libraries:** Spring Web, Spring Data JPA
 
 ## Developer
-**Felicia June**
- 
+This project was created by **Felicia June** together with other team members as part of the Object Based Programming (OBP) course.
