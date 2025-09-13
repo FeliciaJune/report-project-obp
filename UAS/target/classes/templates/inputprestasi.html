@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Prestasi</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: maroon;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .bg-holder {
+            background-image: url('/images/prestasi.jpg'); 
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; 
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 60px;
+            border-radius: 10px; 
+        }
+
+        .button:hover {background-color: red !important;}
+    </style>
+</head>
+<body>
+    <div class="bg-holder"></div>
+    <div class="container">
+        <h1 style="font-size: 35px; margin-bottom: 10px; padding-top: 80px;">Silahkan Input Data Prestasi</h1>
+        <p style="margin-bottom: 20px;">Anda Login sebagai Murid</p>
+        
+        <form action="/submitprestasi" method="POST">
+            <!-- Nisn Input Field -->
+            <label for="nisn">NISN</label>
+            <input type="number" id="nisn" name="nisn" required placeholder="NISN"><br><br>
+
+            <div class="prestasi">
+                <fieldset style="border-radius: 10px; border-color: maroon; width: 150px; padding-bottom: 10px; padding-left: 20px; background-color: rgb(222, 219, 219);">
+                    <legend style="background-color: maroon; color: white; padding: 5px; margin: 10px; margin-bottom: 8px; border-radius: 8px; width: 100px;">Prestasi</legend>
+                    <input type="radio" id="Jenis1" name="jenis" value="Akademik" required>
+                    <label for="Jenis1">Akademik</label><br>
+                    <input type="radio" id="Jenis2" name="jenis" value="Non-Akademik" required>
+                    <label for="Jenis2">Non-Akademik</label><br>
+                </fieldset>
+            </div>
+
+            <div class="tingkat">
+                <label for="Tingkat">Tingkat</label>
+                <select style="margin: 10px; background: rgb(222, 219, 219); color: black; padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px; border-radius: 5px; margin-top: 20px;" id="Tingkat" name="tingkat" required>
+                    <option value="Internasional">Internasional</option>
+                    <option value="Nasional">Nasional</option>
+                    <option value="Kota">Kota</option>
+                    <option value="Sekolah">Sekolah</option>
+                </select><br>
+            </div>
+
+            <div class="peringkat">
+                <fieldset style="border-radius: 10px; border-color: maroon; width: 150px; padding-bottom: 10px; padding-left: 20px; background-color: rgb(222, 219, 219); margin-top: 20px;">
+                    <legend style="background-color: maroon; color: white; padding: 5px; margin: 10px; margin-bottom: 8px; border-radius: 8px; width: 100px;">Peringkat</legend>
+                    <input type="radio" id="peringkat1" name="peringkat" value="1" required>
+                    <label for="peringkat1">1</label><br>
+                    <input type="radio" id="peringkat2" name="peringkat" value="2" required>
+                    <label for="peringkat2">2</label><br>
+                    <input type="radio" id="peringkat3" name="peringkat" value="3" required>
+                    <label for="peringkat3">3</label><br>
+                </fieldset>
+            </div>
+
+            <label style="display: inline-block; width: 120px; text-align: left; margin-top: 20px;" for="desc">Deskripsi</label>
+            <input style="padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px;" type="text" id="desc" name="deskripsi" placeholder="Deskripsi"><br><br>
+
+            <label style="display: inline-block; width: 120px; text-align: left;" for="tahun">Tahun</label>
+            <input style="padding-top: 5px; padding-bottom: 5px; padding-left: 10px; padding-right: 10px;" type="text" id="tahun" name="tahun" placeholder="Tahun" required><br><br>
+
+            <button type="submit" class="button" style="margin: 20px 10px; margin-left: 0px; padding: 15px 40px; color: white; text-decoration: none; transition: background-color 0.5s; border-radius: 10px; background-color: maroon; display: inline-block;">Submit</button>
+        </form>
+
+        <a href="daftarprestasi" class="button" style="margin: 20px 10px; margin-left: 0px; padding: 15px 40px; color: white; text-decoration: none; transition: background-color 0.5s; border-radius: 10px; background-color: maroon; display: inline-block;">Daftar Prestasi</a>
+    </div>
+</body>
+</html>

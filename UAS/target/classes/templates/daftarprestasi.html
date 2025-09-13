@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestasi Siswa</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: maroon;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: whitesmoke; 
+            padding: 20px 60px; 
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .button:hover {
+            background-color: red !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="prestasi">
+            <h1 style="font-size: 35px; margin-bottom: 10px;">Prestasi Siswa</h1>
+            <center>
+                <!-- Table to display Prestasi records -->
+                <table border="1" cellspacing="0" bgcolor="white">
+                    <thead>
+                        <tr>
+                            <th>NISN</th>
+                            <th>Jenis</th>  
+                            <th>Tingkat</th> 
+                            <th>Peringkat</th> 
+                            <th>Deskripsi</th> 
+                            <th>Tahun</th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <th:block th:each="prestasi : ${prestasiList}">
+                            <tr>
+                                <td th:text="${prestasi.nisn}"></td>
+                                <td th:text="${prestasi.jenis}"></td>
+                                <td th:text="${prestasi.tingkat}"></td>
+                                <td th:text="${prestasi.peringkat}"></td>
+                                <td th:text="${prestasi.deskripsi}"></td>
+                                <td th:text="${prestasi.tahun}"></td>
+                            </tr>
+                        </th:block>
+                    </tbody>
+                </table>
+                <br>
+            </center>
+
+            <!-- Buttons for other actions -->
+            <a href="RapotSiswa" class="button" style="margin: 20px 10px; margin-left: 0px; padding: 15px 40px; color: white; text-decoration: none; 
+            transition: background-color 0.5s; border-radius: 10px; background-color: maroon; display: inline-block;">Rapot Siswa</a>
+            <a href="LogoutSiswa" class="button" style="margin: 20px 10px; margin-left: 0px; padding: 15px 40px; color: white; text-decoration: none; 
+            transition: background-color 0.5s; border-radius: 10px; background-color: maroon; display: inline-block;">Logout</a>
+        </div> <!-- End of Div Prestasi -->
+    </div> <!-- End of Div Container -->
+</body>
+</html>

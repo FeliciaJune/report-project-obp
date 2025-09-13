@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Guru</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+      
+        .bg-holder {
+            background-image: url('/images/gurubg.jpg'); 
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; 
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 60px;
+            border-radius: 10px; 
+        }
+
+        .button:hover {
+            background-color: red !important;
+        }
+
+        input[type="text"], input[type="password"] {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="bg-holder"></div>
+
+    <div class="container">
+        <div class="menu">
+            <p style="margin-bottom: 30px;">Anda Login sebagai Guru</p>
+            <h1 style="font-size: 35px; margin-bottom: 10px;">Silahkan Input Data Nilai Murid Dibawah</h1>
+            
+
+            <form action="#" method="post">
+                <label for="name" style="display: inline-block; width: 120px; text-align: left;">Nama Murid</label>
+                <input type="text" id="name" name="name" placeholder="Nama Murid" required><br>
+
+                <label for="mapel" style="display: inline-block; width: 120px; text-align: left;">Mata Pelajaran</label>
+                <input type="text" id="mapel" name="mapel" placeholder="Mata Pelajaran" required><br>
+
+                <label for="nilai" style="display: inline-block; width: 120px; text-align: left;">Nilai</label>
+                <input type="text" id="nilai" name="nilai" placeholder="Nilai" required><br>
+
+                <label for="nilai" style="display: inline-block; width: 120px; text-align: left;">Semester</label>
+                <input type="text" id="nilai" name="nilai" placeholder="Semester" required><br>
+
+                <a href="#" class="button" style="margin: 20px 10px; padding: 15px 40px; color: white; text-decoration: none; 
+                transition: background-color 0.5s; border-radius: 10px; background-color: maroon; display: inline-block;">Submit</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
