@@ -4,6 +4,7 @@ This project is a **Student Report System** developed for the **Object Based Pro
 
 ## Note
 This project runs locally. Please start it on **localhost** using the Spring Boot configuration (`server.port=8082`) and a phpMyAdmin database.
+(http://localhost:8082/home.html)
 
 ## Disclaimer
 This website layout is optimized for **desktop view**. Some elements may not be fully responsive on mobile devices.
