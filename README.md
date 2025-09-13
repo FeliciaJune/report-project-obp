@@ -1,4 +1,4 @@
-# OBP Project – Student Report System
+# Student Report System Project – OBP
 
 This project is a **Student Report System** developed for the **Object Based Programming (OBP)** course. It is built using **Java Spring Boot** for the backend, **HTML & CSS** for the frontend, and **phpMyAdmin** for the database. The system allows teachers to input student grades and allows students to input their achievements and view the achievements card. Both **teachers and students can view the report card** at any time and calculate pass/fail status.
 
